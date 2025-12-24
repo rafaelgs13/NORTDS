@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Portfólio | NORTDS</title>
+  <link rel="stylesheet" href="style.css?v=1.0">
+<script defer src="/js/animations.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<nav>
+  <img src="/assets/img/logo.png" alt="NORTDS">
+  <div>
+    <a href="/">Início</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/contacto/">Contacto</a>
+  </div>
+</nav>
+
+
+
+<section>
+  <h2 style="grid-column: 1 / -1; margin-top: 40px; text-align:center;">Portfólio</h2>
+  <br>
+  <div class="grid">
+
+  <!-- FOTOS EXISTENTES -->
+  <div class="card"><img src="https://picsum.photos/900/500?random=1" alt="Loja 1"><h3>Peça 1</h3></div>
+  <div class="card"><img src="https://picsum.photos/900/500?random=2" alt="Autocarro 1"><h3>Peça 2</h3></div>
+  <div class="card"><img src="https://picsum.photos/900/500?random=3" alt="Autocarro 2"><h3>Peça 3</h3></div>
+  <div class="card"><img src="https://picsum.photos/900/500?random=4" alt="Autocarro 3"><h3>Peça 4</h3></div>
+  <div class="card"><img src="https://picsum.photos/900/500?random=5" alt="Autocarro 4"><h3>Peça 5</h3></div>
+
+  </div>
+  </section>
+
+  <!-- POPUP DE IMAGEM -->
+<div class="popup" id="popupImageBox">
+  <span class="close-popup" onclick="closeImagePopup()">&times;</span>
+  <img id="popupImage" src="">
+</div>
+
+<!-- SCRIPT: POPUP DE IMAGEM -->
+<script>
+  const popupBox = document.getElementById("popupImageBox");
+  const popupImg = document.getElementById("popupImage");
+
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+      if (img.closest('.video-card')) return; // impede abrir imagem no caso dos vídeos
+      popupImg.src = img.src;
+      popupBox.classList.add("active");
+    });
+  });
+
+  function closeImagePopup() {
+    popupBox.classList.remove("active");
+  }
+
+  popupBox.addEventListener("click", e => {
+    if (e.target === popupBox) closeImagePopup();
+  });
+</script>
+
+<footer>© 2025 NORTDS – Precision Machining</footer>
+</body>
+</html>
