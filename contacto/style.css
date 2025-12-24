@@ -1,1 +1,60 @@
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{background:#0a0f1f;color:#fff}
+nav{
+  position:fixed;top:0;left:0;width:100%;height:80px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 60px;background:rgba(5,7,15,.95);z-index:1000
+}
+nav img{height:45px}
+nav a{color:white;text-decoration:none;margin-left:25px}
+header{
+  height:100vh;padding-top:80px;padding-left:80px;
+  display:flex;align-items:center;
+  background:
+    linear-gradient(120deg,rgba(0,0,0,.85),rgba(0,0,0,.3)),
+    url('../assets/img/industrial-bg.jpg') center/cover no-repeat;
+}
+section{
+  min-height:100vh;padding:120px 80px;
+  opacity:0;transform:translateY(40px);
+  transition:.8s ease
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{background:#111;padding:40px;border-radius:20px;text-align:center}
+.btn{
+  display:inline-block;margin-top:30px;
+  padding:15px 35px;background:#00c2ff;color:#000;
+  border-radius:30px;text-decoration:none
+}
+footer{text-align:center;padding:40px;background:#05070f}
+
+/* ---------------- FORMULÁRIO ---------------- */
+.form-contato{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width:500px;
+  margin:auto;
+}
+.form-contato input,
+.form-contato textarea{
+  padding:15px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+.form-contato input:focus,
+.form-contato textarea:focus{
+  border-color:#ff4500;
+  outline:none;
+}
+.form-contato button{
+  padding:15px;
+  background:#00005c;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+.form-contato button:hover{ background:#0000ff; }
